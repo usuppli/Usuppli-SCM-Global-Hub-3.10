@@ -1,0 +1,38 @@
+@media print {
+  /* 1. HIDE EVERYTHING by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* 2. RESET Page Styles (Force White Paper) */
+  body {
+    background-color: white !important;
+    color: black !important;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important; /* Chrome/Safari */
+    print-color-adjust: exact !important; /* Firefox */
+  }
+
+  /* 3. SHOW ONLY the Printable Area */
+  #printable-area, #printable-area * {
+    visibility: visible;
+  }
+
+  /* 4. Position the Printable Area to fill the page */
+  #printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 5. Hide User Interface elements specifically */
+  .no-print, button, nav, aside, .modal-backdrop {
+    display: none !important;
+  }
+}
